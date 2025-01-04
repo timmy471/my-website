@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
+import { FaMoon } from 'react-icons/fa';
+import { FiSun } from 'react-icons/fi';
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,9 +30,9 @@ const ThemeToggle = () => {
   return (
     <button onClick={toggleDarkMode} aria-label='Toggle Dark Mode'>
       {darkMode ? (
-        <MoonIcon className='h-6 w-6 text-gray-900 dark:text-white' />
+        <FaMoon className='h-4 w-4 text-gray-900 dark:text-white' />
       ) : (
-        <SunIcon className='h-6 w-6 text-gray-900 dark:text-white' />
+        <FiSun className='h-4 w-4 text-gray-900 dark:text-white' />
       )}
     </button>
   );
