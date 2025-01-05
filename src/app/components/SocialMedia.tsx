@@ -36,6 +36,15 @@ const socialLinks = [
 ];
 
 export default function SocialMediaIcons() {
+  const handleSocialClick = (label: string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'cta_click', {
+        event_category: 'Social Media',
+        event_label: label,
+      });
+    }
+  };
+
   return (
     <div className='flex space-x-6  lg:space-x-20 text-gray-700 dark:text-gray-300'>
       {socialLinks.map(({ href, icon, label }, index) => (
@@ -45,6 +54,7 @@ export default function SocialMediaIcons() {
           target='_blank'
           rel='noopener noreferrer'
           aria-label={label}
+          onClick={() => handleSocialClick(label)}
           className='text-gray-800 dark:text-gray-300 transition duration-300 transform hover:scale-110'>
           <div className='text-2xl'>{icon}</div>
         </a>

@@ -53,8 +53,29 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: window.location.pathname,
+      });
+    }
+  }, []);
+
+  useEffect(() => {
     setIsMounted(true);
   }, [isMounted]);
+
+  const handleResumeClick = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'cta_click', {
+        event_category: 'Resume',
+        event_label: 'Check Resume',
+      });
+    }
+  };
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className='flex flex-col lg:flex-row gap-y-20 gap-x-4 container mt-10 items-center pb-20'>
@@ -90,6 +111,7 @@ const HomePage = () => {
           target='_blank'
           rel='noopener noreferrer'
           aria-label={'Resume'}
+          onClick={handleResumeClick}
           href='https://docs.google.com/document/d/16r6PF-Qqp-hKQ2BhVdnXf1VOsfZA1BF6hmUTAV5pM-I/edit?usp=drive_link'>
           <span>Check out my Resume</span>
           <HiArrowRight className='w-5 h-5 animate-bounce-horizontal' />
