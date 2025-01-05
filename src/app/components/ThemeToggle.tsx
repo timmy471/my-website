@@ -30,9 +30,9 @@ const ThemeToggle = () => {
   return (
     <button onClick={toggleDarkMode} aria-label='Toggle Dark Mode'>
       {darkMode ? (
-        <FaMoon className='h-4 w-4 text-gray-900 dark:text-white' />
+        <FaMoon className='h-5 w-5 text-gray-900 dark:text-white' />
       ) : (
-        <FiSun className='h-4 w-4 text-gray-900 dark:text-white' />
+        <FiSun className='h-5 w-5 text-gray-900 dark:text-white' />
       )}
     </button>
   );
