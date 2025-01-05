@@ -25,6 +25,15 @@ export default {
         '3xl': '32px',
         '4xl': ['64px', '72px'],
       },
+      animation: {
+        'bounce-horizontal': 'bounceHorizontal 1s infinite',
+      },
+      keyframes: {
+        bounceHorizontal: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(10px)' },
+        },
+      },
     },
   },
   plugins: [],

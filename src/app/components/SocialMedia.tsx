@@ -1,6 +1,6 @@
 import { MdEmail } from 'react-icons/md';
 import { BiLink } from 'react-icons/bi';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaStackOverflow } from 'react-icons/fa';
 
 const socialLinks = [
   {
@@ -17,6 +17,11 @@ const socialLinks = [
     href: 'https://twitter.com/timi471',
     icon: <FaTwitter className='w-6 h-6' />,
     label: 'Twitter',
+  },
+  {
+    href: 'https://stackoverflow.com/users/12396577/ayantunji-timilehin',
+    icon: <FaStackOverflow className='w-6 h-6' />,
+    label: 'Stack Overflow',
   },
   {
     href: 'https://linktr.ee/timmy471',
