@@ -2,7 +2,7 @@ import Script from 'next/script';
 
 const Analytics = () => (
   <>
-    <Script
+    {/* <Script
       src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG}`}
       strategy='afterInteractive'
     />
@@ -13,7 +13,7 @@ const Analytics = () => (
         gtag('js', new Date());
         gtag('config', ${process.env.NEXT_PUBLIC_GTAG});
       `}
-    </Script>
+    </Script> */}
   </>
 );
 
