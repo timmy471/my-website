@@ -3,7 +3,7 @@
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import { HiArrowRight } from 'react-icons/hi';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import SocialMediaIcons from './components/SocialMedia';
 
 const listItems = [
@@ -16,7 +16,7 @@ const HomePage = () => {
   const imageRef = useRef<HTMLDivElement | null>(null);
   const headerRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -60,9 +60,9 @@ const HomePage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, [isMounted]);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, [isMounted]);
 
   const handleResumeClick = () => {
     if (typeof window !== 'undefined' && window.gtag) {
@@ -73,21 +73,24 @@ const HomePage = () => {
     }
   };
 
-  if (!isMounted) {
-    return null;
-  }
+  // if (!isMounted) {
+  //   return null;
+  // }
 
   return (
     <div className='flex flex-col lg:flex-row gap-y-20 gap-x-4 container mt-10 items-center pb-20'>
       <div className='lg:w-1/2'>
-        <Image
-          src='/images/ayantunjitimilehin.webp'
-          alt='Ayantunji Timilehin'
-          width={500}
-          height={500}
-          className='rounded-xl'
-          ref={imageRef as any}
-        />
+        <div ref={imageRef} className='rounded-xl'>
+          <div ref={imageRef}>
+            <Image
+              src='/images/ayantunjitimilehin.webp'
+              alt='Ayantunji Timilehin'
+              width={500}
+              height={500}
+              className='rounded-xl'
+            />
+          </div>
+        </div>
       </div>
 
       <div className='lg:w-1/2'>
@@ -112,7 +115,7 @@ const HomePage = () => {
           rel='noopener noreferrer'
           aria-label={'Resume'}
           onClick={handleResumeClick}
-          href='https://docs.google.com/document/d/16r6PF-Qqp-hKQ2BhVdnXf1VOsfZA1BF6hmUTAV5pM-I/edit?usp=drive_link'>
+          href='https://drive.google.com/file/d/1hZu-1l1eD3iayxJntxrEpkocJXLTxg2h/view?usp=sharing'>
           <span>Check out my Resume</span>
           <HiArrowRight className='w-5 h-5 animate-bounce-horizontal' />
         </a>

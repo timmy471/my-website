@@ -1,7 +1,7 @@
 const meta = {
   title: 'Ayantunji Timilehin - Senior Software Engineer',
   description:
-    "I'm Ayantunji Timilehin, a Senior Software Engineer passionate about performance. I write technical articles on FreeCodeCamp and Hackernoon, contribute to impactful open-source projects, and mentor developers globally on ADPList.",
+    "I'm Ayantunji Timilehin, a Senior Software Engineer passionate about web performance. I write technical articles on FreeCodeCamp and Hackernoon, contribute to impactful open-source projects, and mentor developers globally on ADPList.",
   keywords: [
     'Senior Software Engineer',
     'Frontend Developer',
