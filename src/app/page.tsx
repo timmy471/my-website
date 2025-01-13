@@ -5,12 +5,7 @@ import Image from 'next/image';
 import { HiArrowRight } from 'react-icons/hi';
 import { useEffect, useRef } from 'react';
 import SocialMediaIcons from './components/SocialMedia';
-
-const listItems = [
-  'Senior Software Engineer, Passionate About Performance',
-  'Technical Writer on FreeCodeCamp and Hackernoon',
-  'Open-source Contributor to Impactful Projects',
-];
+import { FreeCodeCamp, hackernoon, resume } from '@/constants/links';
 
 const HomePage = () => {
   const imageRef = useRef<HTMLDivElement | null>(null);
@@ -99,12 +94,31 @@ const HomePage = () => {
           <h1 className='text-3xl xl:text-4xl font-bold'>Ayantunji Timilehin</h1>
         </div>
 
-        <ul className='mt-8 text-sm pl-4 lg:text-2xl space-y-4 list-disc' ref={listRef}>
-          {listItems.map((item, index) => (
-            <li key={index} className='leading-[1.5]'>
-              {item}
-            </li>
-          ))}
+        <ul
+          className='mt-8 text-sm pl-4 lg:text-2xl space-y-4 list-disc leading-[1.5]'
+          ref={listRef}>
+          <li>Senior Software Engineer, Passionate About Performance</li>
+          <li>
+            Technical Writer on{' '}
+            <a
+              className='underline'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={'FreeCodeCamp'}
+              href={FreeCodeCamp}>
+              FreeCodeCamp
+            </a>{' '}
+            and{' '}
+            <a
+              className='underline'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={'Hackernoon'}
+              href={hackernoon}>
+              Hackernoon
+            </a>
+          </li>
+          <li>Open-source Contributor to Impactful Projects</li>
         </ul>
         <div className='mt-20'>
           <SocialMediaIcons />
@@ -115,7 +129,7 @@ const HomePage = () => {
           rel='noopener noreferrer'
           aria-label={'Resume'}
           onClick={handleResumeClick}
-          href='https://drive.google.com/file/d/1hZu-1l1eD3iayxJntxrEpkocJXLTxg2h/view?usp=sharing'>
+          href={resume}>
           <span>Check out my Resume</span>
           <HiArrowRight className='w-5 h-5 animate-bounce-horizontal' />
         </a>
