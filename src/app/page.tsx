@@ -17,7 +17,7 @@ const HomePage = () => {
 
   const imageRef = useRef<HTMLDivElement | null>(null);
   const headerRef = useRef<HTMLDivElement | null>(null);
-  const listRef = useRef<any>(null);
+  const listRef = useRef<HTMLUListElement | null>(null);
   const openSourceRef = useRef<(HTMLDivElement | null)[]>([]);
   const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
   // const [isMounted, setIsMounted] = useState(false);
